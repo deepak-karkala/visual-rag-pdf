@@ -1,0 +1,59 @@
+# Changes Log
+
+## 2024-03-19
+### Initial Setup
+1. Created project structure
+   - /frontend directory for NextJS application
+   - /backend directory for FastAPI application
+   - /docs directory for documentation
+   - /scripts directory for utility scripts
+
+2. Backend Setup
+   - Created requirements.txt with necessary dependencies
+   - Set up main.py with FastAPI configuration and CORS middleware
+   - Created modular directory structure:
+     - /app/api
+     - /app/core
+     - /app/models
+     - /app/services
+     - /app/utils
+   - Created Python virtual environment (venv)
+   - Fixed dependency conflicts:
+     - Updated FastAPI to >=0.100.0 for Pydantic 2.0+ compatibility
+     - Removed strict version upper bounds
+     - Successfully installed all dependencies
+   - Implemented core services:
+     - PDFService: PDF processing and text extraction
+     - VectorStore: Document embedding and similarity search
+     - ChatService: LLM interaction and response generation
+   - Created API endpoints:
+     - POST /api/v1/upload: PDF document upload and processing
+     - POST /api/v1/chat: Question answering with context
+   - Added configuration management with environment variables
+
+3. Frontend Setup
+   - Initialized NextJS application with:
+     - TypeScript support
+     - Tailwind CSS for styling
+     - ESLint for code linting
+     - App Router architecture
+     - "@/*" import aliases
+   - Created core components:
+     - PDFUpload: Drag-and-drop PDF file upload
+     - Chat: Main chat interface container
+     - MessageList: Display of chat messages
+     - MessageInput: Message input form
+   - Implemented basic UI layout and styling
+
+4. Integration
+   - Created .env file for environment configuration
+   - Set up Docker Compose for Qdrant vector database
+   - Implemented frontend API client (app/lib/api.ts)
+   - Connected frontend components to backend API:
+     - PDF upload with progress and error handling
+     - Chat interface with loading states
+     - Message list with real-time updates
+   - Added error handling and loading states
+
+5. Documentation
+   - Created comprehensive README.md with project overview, setup instructions, and requirements 
